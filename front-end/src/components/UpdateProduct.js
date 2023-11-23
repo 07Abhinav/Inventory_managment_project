@@ -13,7 +13,7 @@ function UpdateProduct(){
     let [SellingPrice, setSellingPrice] = useState(location.state.value.SellingPrice);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/category`, {
+        fetch(`https://inventory-backend-hal1.onrender.com/category`, {
             method: 'GET',
         })
         .then((res) => res.json())
@@ -27,7 +27,7 @@ function UpdateProduct(){
 
     function Update(e){
         e.preventDefault()
-        fetch(`http://localhost:8000/updateProduct/${location.state.value._id}`, {
+        fetch(`https://inventory-backend-hal1.onrender.com/${location.state.value._id}`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",

@@ -5,7 +5,7 @@ function LowStock(){
   let [products, setProducts] = useState([]);
   
   useEffect(() => {
-    fetch(`http://localhost:8000/products`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/products`, {
         method: 'GET',
     })
     .then((res) => res.json())

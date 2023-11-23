@@ -9,7 +9,7 @@ function Suppliers() {
     let [update2, setUpdate2] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/Supplier`, {
+        fetch(`https://inventory-backend-hal1.onrender.com/Supplier`, {
             method: 'GET',
         })
         .then((res) => res.json())
@@ -20,7 +20,7 @@ function Suppliers() {
 
     function AddSupplier(e) {
         e.preventDefault()
-        fetch('http://localhost:8000/addSupplier', {
+        fetch('https://inventory-backend-hal1.onrender.com/addSupplier', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function Suppliers() {
     }
 
     function deleteSupplier(e) {
-        const URL = `http://localhost:8000/deleteSupplier/${e.target.alt}`
+        const URL = `https://inventory-backend-hal1.onrender.com/${e.target.alt}`
         fetch(URL, {
             method: 'DELETE',
         })
@@ -45,7 +45,7 @@ function Suppliers() {
 
     function UpdateSupplier(e) {
         e.preventDefault()
-        fetch(`http://localhost:8000/updateSupplier/${update1}`, {
+        fetch(`https://inventory-backend-hal1.onrender.com/${update1}`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",

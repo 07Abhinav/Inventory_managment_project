@@ -28,7 +28,7 @@ function Sales(){
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch(`http://localhost:8000/products`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/products`, {
         method: 'GET',
     })
     .then((res) => res.json())
@@ -39,7 +39,7 @@ function Sales(){
         setCategories(temp.filter((e) => (e.inStock !== '0')))
         setCopy(json)
     })
-    fetch(`http://localhost:8000/Customer`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/Customer`, {
             method: 'GET',
     })
     .then((res) => res.json())
@@ -82,7 +82,7 @@ function Sales(){
   function Sale(e){
     e.preventDefault()
     products.forEach((e) => {
-      fetch('http://localhost:8000/StockOut', {
+      fetch('https://inventory-backend-hal1.onrender.com/StockOut', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -97,7 +97,7 @@ function Sales(){
         })
       })
 
-      fetch(`http://localhost:8000/updateProduct/${Copy.filter((element) => (element.ProductName === `${e.ProductName}`))[0]._id}`, {
+      fetch(`https://inventory-backend-hal1.onrender.com/${Copy.filter((element) => (element.ProductName === `${e.ProductName}`))[0]._id}`, {
         method: 'PUT',
         headers: {
           "Content-Type": "application/json",

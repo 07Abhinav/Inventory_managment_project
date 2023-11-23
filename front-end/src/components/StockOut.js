@@ -6,7 +6,7 @@ function StockOut(){
   let [StockOut, setStockOut] = useState([]);
   
   useEffect(() => {
-    fetch(`http://localhost:8000/StockOut/get`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/StockOut/get`, {
         method: 'GET',
     })
     .then((res) => res.json())
@@ -16,7 +16,7 @@ function StockOut(){
   }, [])
 
   function deleteProduct(e){
-    const URL = `http://localhost:8000/deleteStockOut/${e.target.alt}`
+    const URL = `https://inventory-backend-hal1.onrender.com/${e.target.alt}`
     fetch(URL, {
       method: 'DELETE',
     })

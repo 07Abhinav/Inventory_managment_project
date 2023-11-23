@@ -11,7 +11,7 @@ function Register(){
 
     function Add(e){
         e.preventDefault()
-        fetch('http://localhost:8000/addUser', {
+        fetch('https://inventory-backend-hal1.onrender.com/addUser', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",

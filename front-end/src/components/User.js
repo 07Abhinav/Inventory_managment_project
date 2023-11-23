@@ -6,7 +6,7 @@ function Users(){
     let [User, setUser] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/Users`, {
+        fetch(`https://inventory-backend-hal1.onrender.com/Users`, {
             method: 'GET',
         })
         .then((res) => res.json())
@@ -17,7 +17,7 @@ function Users(){
     }, [])
 
     function deleteSupplier(e) {
-        const URL = `http://localhost:8000/deleteUser/${e.target.alt}`
+        const URL = `https://inventory-backend-hal1.onrender.com/${e.target.alt}`
         fetch(URL, {
             method: 'DELETE',
         })

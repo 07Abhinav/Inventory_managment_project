@@ -19,7 +19,7 @@ function Purchase(){
   let Sell = useRef(null)
 
   useEffect(() => {
-    fetch(`http://localhost:8000/products`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/products`, {
         method: 'GET',
     })
     .then((res) => res.json())
@@ -30,7 +30,7 @@ function Purchase(){
         setCategories(temp)
         setCopy(json)
     })
-    fetch(`http://localhost:8000/Supplier`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/Supplier`, {
             method: 'GET',
     })
     .then((res) => res.json())
@@ -62,7 +62,7 @@ function Purchase(){
 
   function Update(e){
     e.preventDefault()
-    fetch('http://localhost:8000/StockIn', {
+    fetch('https://inventory-backend-hal1.onrender.com/StockIn', {
       method: 'POST',
       headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ function Purchase(){
       })
     })
 
-    fetch(`http://localhost:8000/updateProduct/${Copy.filter((element) => (element.ProductName === `${ProductName}`))[0]._id}`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/updateProduct/${Copy.filter((element) => (element.ProductName === `${ProductName}`))[0]._id}`, {
         method: 'PUT',
         headers: {
             "Content-Type": "application/json",

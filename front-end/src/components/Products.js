@@ -7,7 +7,7 @@ function Products(){
   let [products, setProducts] = useState([]);
   
   useEffect(() => {
-    fetch(`http://localhost:8000/products`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/products`, {
         method: 'GET',
     })
     .then((res) => res.json())
@@ -17,7 +17,7 @@ function Products(){
   }, [])
 
   function deleteProduct(e){
-    const URL = `http://localhost:8000/deleteProduct/${e.target.alt}`
+    const URL = `https://inventory-backend-hal1.onrender.com/deleteProduct/${e.target.alt}`
     fetch(URL, {
       method: 'DELETE',
     })
