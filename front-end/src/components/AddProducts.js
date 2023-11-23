@@ -1,14 +1,14 @@
 import { Autocomplete, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import '../styles/AddProducts.css'
-//hello
+
 function AddProducts(){
     let [Categories, setCategories] = useState([]);
     let [ProductName, setProductName] = useState([]);
     let [Category, setCategory] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/category`, {
+        fetch(`https://inventory-backend-hal1.onrender.com/category`, {
             method: 'GET',
         })
         .then((res) => res.json())
@@ -22,7 +22,7 @@ function AddProducts(){
 
     function Add(e){
         e.preventDefault()
-        fetch('http://localhost:8000/addProduct', {
+        fetch('https://inventory-backend-hal1.onrender.com/addProduct', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
