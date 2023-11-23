@@ -18,7 +18,7 @@ function Dashboard(){
   let Profit = isNaN((parseInt(Income) - parseInt(Expenses)) / parseInt(Expenses) * 100) || parseInt(Expenses) === 0 ? 0 : parseInt((parseInt(Income) - parseInt(Expenses)) / parseInt(Expenses) * 100)
 
   useEffect(() => {
-    fetch(`http://localhost:8000/products`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/products`, {
         method: 'GET',
     })
     .then((res) => res.json())
@@ -26,7 +26,7 @@ function Dashboard(){
       setProducts(json)
     })
 
-    fetch(`http://localhost:8000/StockIn/get`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/StockIn/get`, {
       method: 'GET',
     })
     .then((res) => res.json())
@@ -57,7 +57,7 @@ function Dashboard(){
       setExpenses(tempExpenses)
     })
 
-    fetch(`http://localhost:8000/StockOut/get`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/StockOut/get`, {
         method: 'GET',
     })
     .then((res) => res.json())

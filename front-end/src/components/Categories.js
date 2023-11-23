@@ -8,14 +8,14 @@ function Categories(){
   let [update, setUpdate] = useState([]);
   
   useEffect(() => {
-    fetch(`http://localhost:8000/category`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/category`, {
         method: 'GET',
     })
     .then((res) => res.json())
     .then((json) => {
         setCategories(json)
     })
-    fetch(`http://localhost:8000/products`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/products`, {
         method: 'GET',
     })
     .then((res) => res.json())
@@ -26,7 +26,7 @@ function Categories(){
 
   function AddCategory(e){
     e.preventDefault()
-    fetch('http://localhost:8000/addCategory', {
+    fetch('https://inventory-backend-hal1.onrender.com/addCategory', {
       method: 'POST',
       headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ function Categories(){
   }
 
   function deleteCategory(e){
-    const URL = `http://localhost:8000/deleteCategory/${e.target.alt}`
+    const URL = `https://inventory-backend-hal1.onrender.com/deleteCategory/${e.target.alt}`
     fetch(URL, {
       method: 'DELETE',
     })
@@ -50,7 +50,7 @@ function Categories(){
   
   function UpdateCategory(e){
     e.preventDefault()
-    fetch(`http://localhost:8000/updateCategory/${update}`, {
+    fetch(`https://inventory-backend-hal1.onrender.com/updateCategory/${update}`, {
       method: 'PUT',
       headers: {
           "Content-Type": "application/json",

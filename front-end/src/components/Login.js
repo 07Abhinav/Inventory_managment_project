@@ -14,7 +14,7 @@ class Login extends PureComponent {
 
   Login(e){
     e.preventDefault();
-    const URL = `http://localhost:8000/login/${this.state.RetailerId}&${this.state.Password}`;
+    const URL = `https://inventory-backend-hal1.onrender.com/login/${this.state.RetailerId}&${this.state.Password}`;
     fetch(URL, {
         method: 'GET',
     })

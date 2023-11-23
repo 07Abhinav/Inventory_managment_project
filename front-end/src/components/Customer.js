@@ -9,7 +9,7 @@ function Customers() {
     let [update2, setUpdate2] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/Customer`, {
+        fetch(`https://inventory-backend-hal1.onrender.com/Customer`, {
             method: 'GET',
         })
         .then((res) => res.json())
@@ -20,7 +20,7 @@ function Customers() {
 
     function AddCustomer(e) {
         e.preventDefault()
-        fetch('http://localhost:8000/addCustomer', {
+        fetch('https://inventory-backend-hal1.onrender.com/addCustomer', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function Customers() {
     }
 
     function deleteCustomer(e) {
-        const URL = `http://localhost:8000/deleteCustomer/${e.target.alt}`
+        const URL = `https://inventory-backend-hal1.onrender.com/deleteCustomer/${e.target.alt}`
         fetch(URL, {
             method: 'DELETE',
         })
@@ -45,7 +45,7 @@ function Customers() {
 
     function UpdateCustomer(e) {
         e.preventDefault()
-        fetch(`http://localhost:8000/updateCustomer/${update1}`, {
+        fetch(`https://inventory-backend-hal1.onrender.com/updateCustomer/${update1}`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",
